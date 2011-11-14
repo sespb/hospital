@@ -1,0 +1,48 @@
+<h1>Listing hospitais</h1>
+
+<%= form_for @search, :url => hospitais_path, :html => {:method => :get} do |f|%>
+    <%= f.label :macro %>
+    <%= f.text_field :municipio_macro_codigo_contains %><br />
+    <%= f.label :GRS %>
+    <%= f.text_field :municipio_gerencia_codigo_contains %><br />
+    <%= f.label :nome %>
+    <%= f.text_field :nome_contains %><br />
+    <%= f.submit 'Localizar' %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Municipio</th>
+    <th>Nome</th>
+    <th>CNES</th>
+    <th>GRS</th>
+    <th>Macro</th>
+    <th>Total de Leitos</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hospitais.each do |hospital| %>
+  <% if hospital.leito.nil? %>
+      <% total = 0 %>
+  <% else %>
+      <% total = hospital.leito.cl + hospital.leito.cir + hospital.leito.obs + hospital.leito.ped + hospital.leito.uti + hospital.leito.uti_neo + hospital.leito.isol %>
+  <% end %>
+  <tr>
+    <td><%= hospital.municipio.nome %></td>
+    <td><%= hospital.nome %></td>
+    <td><%= hospital.cnes %></td>
+    <td><%= hospital.municipio.gerencia.codigo %></td>
+    <td><%= hospital.municipio.macro.codigo %></td>
+    <td><%= total %></td>
+    <td><%= link_to 'Show', hospital %></td>
+    <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
+    <td><%= link_to 'Destroy', hospital, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hospital', new_hospital_path %>

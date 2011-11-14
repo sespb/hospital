@@ -1,0 +1,49 @@
+<%= form_for(@hospital) do |f| %>
+  <% if @hospital.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hospital.errors.count, "error") %> prohibited this hospital from being saved:</h2>
+
+      <ul>
+      <% @hospital.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :municipio %><br />
+    <%= f.collection_select(:municipio_id, Municipio.all, :id, :nome, :prompt => true ) %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :situacao %><br />
+    <%= f.text_field :situacao %>
+  </div>
+  <div class="field">
+    <%= f.label :cnes %><br />
+    <%= f.text_field :cnes %>
+  </div>
+  <div class="field">
+    <%= f.label :condicao_funcionamento %><br />
+    <%= f.text_field :condicao_funcionamento %>
+  </div>
+  <div class="field">
+    <%= f.label :ativ_adm %><br />
+    <%= f.text_field :ativ_adm %>
+  </div>
+  <div class="field">
+    <%= f.label :medicos %><br />
+    <%= f.number_field :medicos %>
+  </div>
+  <div class="field">
+    <%= f.label :populacao %><br />
+    <%= f.number_field :populacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

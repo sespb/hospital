@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @hospital.municipio.nome %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @hospital.nome %>
+</p>
+
+<p>
+  <b>Situacao:</b>
+  <%= @hospital.situacao %>
+</p>
+
+<p>
+  <b>Cnes:</b>
+  <%= @hospital.cnes %>
+</p>
+
+<p>
+  <b>Condicao funcionamento:</b>
+  <%= @hospital.condicao_funcionamento %>
+</p>
+
+<p>
+  <b>Ativ adm:</b>
+  <%= @hospital.ativ_adm %>
+</p>
+
+<p>
+  <b>Medicos:</b>
+  <%= @hospital.medicos %>
+</p>
+
+<p>
+  <b>Populacao:</b>
+  <%= @hospital.populacao %>
+</p>
+
+<% if @hospital.leito.nil? %>
+    <%= link_to "Adicionar Leito", :controller => "leitos", :action => "new", :hospital => @hospital %> |
+<% end %>
+<%= link_to 'Edit', edit_hospital_path(@hospital) %> |
+<%= link_to 'Back', hospitais_path %>

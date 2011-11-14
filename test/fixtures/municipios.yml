@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  macro: 
+  gerencia: 
+  nome: MyString
+  cod_geo: MyString
+
+two:
+  macro: 
+  gerencia: 
+  nome: MyString
+  cod_geo: MyString

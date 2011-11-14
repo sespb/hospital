@@ -1,0 +1,53 @@
+<%= form_for(@leito) do |f| %>
+  <% if @leito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leito.errors.count, "error") %> prohibited this leito from being saved:</h2>
+
+      <ul>
+      <% @leito.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cl %><br />
+    <%= f.number_field :cl %>
+  </div>
+  <div class="field">
+    <%= f.label :cir %><br />
+    <%= f.number_field :cir %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.number_field :obs %>
+  </div>
+  <div class="field">
+    <%= f.label :ped %><br />
+    <%= f.number_field :ped %>
+  </div>
+  <div class="field">
+    <%= f.label :uti %><br />
+    <%= f.number_field :uti %>
+  </div>
+  <div class="field">
+    <%= f.label :uti_neo %><br />
+    <%= f.number_field :uti_neo %>
+  </div>
+  <div class="field">
+    <%= f.label :isol %><br />
+    <%= f.number_field :isol %>
+  </div>
+  <div class="field">
+    <% if @leito.hospital %>
+      <%= f.hidden_field 'hospital_id' %>
+    <% else %>
+      <%= f.label :hospital %><br />
+      <%= f.collection_select(:hospital_id, Hospital.all, :id, :nome, :prompt => true) %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

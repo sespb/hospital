@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cl: 1
+  cir: 1
+  obs: 1
+  ped: 1
+  uti: 1
+  uti_neo: 1
+  isol: 1
+  hospital: 
+
+two:
+  cl: 1
+  cir: 1
+  obs: 1
+  ped: 1
+  uti: 1
+  uti_neo: 1
+  isol: 1
+  hospital: 

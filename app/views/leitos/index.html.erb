@@ -1,0 +1,37 @@
+<h1>Listing leitos</h1>
+
+<table>
+  <tr>
+    <th>Cl</th>
+    <th>Cir</th>
+    <th>Obs</th>
+    <th>Ped</th>
+    <th>Uti</th>
+    <th>Uti neo</th>
+    <th>Isol</th>
+    <th>Hospital</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leitos.each do |leito| %>
+  <tr>
+    <td><%= leito.cl %></td>
+    <td><%= leito.cir %></td>
+    <td><%= leito.obs %></td>
+    <td><%= leito.ped %></td>
+    <td><%= leito.uti %></td>
+    <td><%= leito.uti_neo %></td>
+    <td><%= leito.isol %></td>
+    <td><%= leito.hospital.nome %></td>
+    <td><%= link_to 'Show', leito %></td>
+    <td><%= link_to 'Edit', edit_leito_path(leito) %></td>
+    <td><%= link_to 'Destroy', leito, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Leito', new_leito_path %>

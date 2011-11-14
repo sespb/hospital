@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Macro:</b>
+  <%= @municipio.macro %>
+</p>
+
+<p>
+  <b>Gerencia:</b>
+  <%= @municipio.gerencia %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @municipio.nome %>
+</p>
+
+<p>
+  <b>Cod geo:</b>
+  <%= @municipio.cod_geo %>
+</p>
+
+
+<%= link_to 'Edit', edit_municipio_path(@municipio) %> |
+<%= link_to 'Back', municipios_path %>

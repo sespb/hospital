@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cl:</b>
+  <%= @leito.cl %>
+</p>
+
+<p>
+  <b>Cir:</b>
+  <%= @leito.cir %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @leito.obs %>
+</p>
+
+<p>
+  <b>Ped:</b>
+  <%= @leito.ped %>
+</p>
+
+<p>
+  <b>Uti:</b>
+  <%= @leito.uti %>
+</p>
+
+<p>
+  <b>Uti neo:</b>
+  <%= @leito.uti_neo %>
+</p>
+
+<p>
+  <b>Isol:</b>
+  <%= @leito.isol %>
+</p>
+
+<p>
+  <b>Hospital:</b>
+  <%= @leito.hospital.nome %>
+</p>
+
+<% total = @leito.cl + @leito.cir + @leito.obs + @leito.ped + @leito.uti + @leito.uti_neo + @leito.isol %>
+
+<p>
+  <b>Tota de Leitos:</b>
+  <%= total %>
+</p>
+
+<%= link_to 'Edit', edit_leito_path(@leito) %> |
+<%= link_to 'Back', leitos_path %>

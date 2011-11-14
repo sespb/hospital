@@ -1,0 +1,23 @@
+<h1>Listing macros</h1>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @macros.each do |macro| %>
+  <tr>
+    <td><%= macro.codigo %></td>
+    <td><%= link_to 'Show', macro %></td>
+    <td><%= link_to 'Edit', edit_macro_path(macro) %></td>
+    <td><%= link_to 'Destroy', macro, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Macro', new_macro_path %>

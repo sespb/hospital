@@ -1,0 +1,39 @@
+<h1>Listing municipios</h1>
+
+<%= form_for @search, :url => municipios_path, :html => {:method => :get} do |f| %>
+  <%= f.label :nome %>
+  <%= f.text_field :nome_contains %><br />
+  <%= f.label :macro %>
+  <%= f.text_field :macro_codigo_contains %><br />
+  <%= f.label :grs %>
+  <%= f.text_field :gerencia_codigo_contains %><br />
+  <%= f.submit 'Localizar'%>
+<% end %>
+
+<table>
+  <tr>
+    <th>Macro</th>
+    <th>GRS</th>
+    <th>Nome</th>
+    <th>Cod geo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @municipios.each do |municipio| %>
+  <tr>
+    <td><%= municipio.macro.codigo %></td>
+    <td><%= municipio.gerencia.codigo %></td>
+    <td><%= municipio.nome %></td>
+    <td><%= municipio.cod_geo %></td>
+    <td><%= link_to 'Show', municipio %></td>
+    <td><%= link_to 'Edit', edit_municipio_path(municipio) %></td>
+    <td><%= link_to 'Destroy', municipio, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Municipio', new_municipio_path %>

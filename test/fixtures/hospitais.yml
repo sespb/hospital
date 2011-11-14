@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  municipio: 
+  situacao: MyString
+  cnes: MyString
+  condicao_funcionamento: MyString
+  ativ_adm: MyString
+  medicos: 1
+  populacao: 1
+
+two:
+  municipio: 
+  situacao: MyString
+  cnes: MyString
+  condicao_funcionamento: MyString
+  ativ_adm: MyString
+  medicos: 1
+  populacao: 1

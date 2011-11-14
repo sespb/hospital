@@ -1,0 +1,21 @@
+<%= form_for(@gerencia) do |f| %>
+  <% if @gerencia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gerencia.errors.count, "error") %> prohibited this gerencia from being saved:</h2>
+
+      <ul>
+      <% @gerencia.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
